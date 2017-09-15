@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
 import HeroesList from './components/HeroesList';
-// import SelectedHero from './components/SelectedHero';
+import SelectedHero from './components/SelectedHero';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        hero: {}
+    }
+}
 
   handleClick = (hero) => {
-    console.log(hero);
     this.setState({ hero });
   };
 
@@ -14,7 +20,7 @@ class App extends Component {
     return (
       <div className="">
         <HeroesList handleClick={this.handleClick} />
-        {/* <SelectedHero /> */}
+        <SelectedHero hero={this.state.hero} />
       </div>
     );
   }
