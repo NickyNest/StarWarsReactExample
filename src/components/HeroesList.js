@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import './styles.css';
 
 class HeroesList extends Component {
@@ -9,6 +10,10 @@ class HeroesList extends Component {
             heroes: []
         }
     }
+
+    static propTypes = {
+        handleClick: PropTypes.func.isRequired
+    };
 
     componentWillMount() {
         fetch('https://swapi.co/api/people/')
@@ -23,7 +28,7 @@ class HeroesList extends Component {
 
     render() {
         return (
-            <nav>
+            <nav className="col">
                 {this.state.heroes.map((hero, index) => (
                     <a className="hero-item" key={hero.name} href=""
                     onClick={(ev) => this.handleClick(ev, index)}>{hero.name}</a>

@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 
 class SelectedHero extends Component{
     render(){
-        console.log(this.props);
+        const { hero } = this.props;
         return (
             <div>
-                Selected hero
+                <div>{hero.name}</div>
+                <div>{hero.height}</div>
+                <div>{hero.mass}</div>
             </div>
         );
     }
