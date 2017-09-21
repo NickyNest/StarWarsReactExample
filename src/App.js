@@ -18,7 +18,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="">
+      <div>
         <HeroesList handleClick={this.handleClick} />
         <SelectedHero hero={this.state.hero} />
       </div>
